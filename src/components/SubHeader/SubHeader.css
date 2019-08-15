@@ -1,0 +1,11 @@
+.container-subheader {
+    text-align: right;
+    padding: 15px 0;
+    background: #fff;
+    margin-bottom: 20px;    
+}
+
+.container-subheader .container {
+    justify-content: flex-end;
+    display: flex;
+}

@@ -4,14 +4,26 @@
     left:0;
     right: 0;
     bottom:0;
-    background: rgba(0,0,0,0.3);
+   
     justify-content: space-between;
     align-items: center;
     display: flex;
     overflow: auto;
 }
 
+.container-modal  .modal-bg {
+    background: rgba(0,0,0,0.3);
+
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom:0;
+}
+
 .container-modal .modal-content {
+    z-index: 10;
     width: 100%;
     max-width: 600px;
     min-width: 300px;

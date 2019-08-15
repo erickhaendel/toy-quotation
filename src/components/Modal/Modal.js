@@ -1,27 +1,21 @@
 import React, { useState, useEffect } from 'react';
 
-// import { Container } from './styles';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { toggleShowModal } from '../../store/actions';
 
 import './Modal.css';
 
-export default function Modal({ title, children, showModalProp }) {
 
-    const [showModal, setShowModal] = useState(false);
-
-    useEffect(() => {
-        setShowModal(showModalProp)
-    }, [showModalProp]);
-
-    function handleCloseModal() {
-
-    }
-
+function Modal({ title, children, showModal, toggleShowModal }) {
     return (
         <div>
             {
-                showModalProp &&
+                showModal &&
                 (
-                    <div className="container-modal" onClick={handleCloseModal}>
+                    <div className="container-modal" >
+                        <div className="modal-bg" onClick={() => toggleShowModal(false)}></div>
                         <div className="modal-content">
                             <div className="modal-header">
                                 <h2>{title}</h2>
@@ -41,3 +35,12 @@ export default function Modal({ title, children, showModalProp }) {
         </div>
     );
 }
+
+const mapStateToProps = store => ({
+    showModal: store.addQuotationReducer.showModal
+})
+
+const mapDispatchToProps = dispatch =>
+    bindActionCreators({ toggleShowModal }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);
