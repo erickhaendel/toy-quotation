@@ -1,0 +1,10 @@
+.container-header {
+    padding : 30px;
+    align-items: center;
+    background-color : #7765cb;
+    text-align: center;
+}
+
+.container-header h1 {
+    color: #fff;
+}

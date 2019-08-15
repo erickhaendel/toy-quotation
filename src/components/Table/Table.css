@@ -1,0 +1,14 @@
+.table-container {
+    width: 100%; 
+}
+
+.table-container th , 
+.table-container td {
+    vertical-align: top;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.table-container th {
+    border-bottom: 1px solid #dedede;
+}
